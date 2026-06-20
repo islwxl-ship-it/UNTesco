@@ -1,0 +1,236 @@
+/* Базовые настройки */
+:root {
+    --primary-color: #0f172a; /* Темно-синий, технологичный */
+    --accent-color: #2563eb; /* Яркий синий для кнопок */
+    --light-bg: #f8fafc;
+    --text-color: #334155;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Навигация */
+.navbar {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--white);
+}
+
+/* Главный экран (Hero) */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1e293b 100%);
+    color: var(--white);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #94a3b8;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* Секции общие стили */
+.section {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: var(--light-bg);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 40px;
+    margin-top: -30px;
+}
+
+/* Сетки */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Карточки */
+.card, .feature-card, .team-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.card:hover, .feature-card:hover, .team-card:hover {
+    transform: translateY(-5px);
+}
+
+.card.outline {
+    box-shadow: none;
+    border: 1px solid #e2e8f0;
+}
+
+.card h3, .feature-card h3, .team-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.feature-card .icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+/* Команда */
+.team-card {
+    text-align: center;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+}
+
+.role {
+    display: block;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* Подвал */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 60px 0 30px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+footer h2 {
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+.copyright {
+    font-size: 14px;
+    border-top: 1px solid #334155;
+    padding-top: 20px;
+    margin-bottom: 0;
+}
+
+/* Адаптивность для телефонов */
+@media (max-width: 768px) {
+    .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-links {
+        display: none; /* Простая скрытая навигация для мобилок на MVP */
+    }
+    
+    .hero h2 {
+        font-size: 32px;
+    }
+}
